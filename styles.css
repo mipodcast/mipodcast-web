@@ -145,7 +145,7 @@ h1 {
     width: 80px;
     height: 80px;
     margin-bottom: 20px;
-    filter: brightness(0) invert(1);
+    /*filter: brightness(0) invert(1);*/
 }
 
 .service-item h3 {
