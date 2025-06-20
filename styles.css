@@ -326,3 +326,45 @@ footer {
     }
 }
 
+
+
+
+/* Custom YouTube Placeholder Styles */
+.youtube-placeholder {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.youtube-placeholder .video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.youtube-placeholder:hover .video-thumbnail {
+    opacity: 0.8;
+}
+
+/* Ensure iframe fills the container once loaded */
+.video-item iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+

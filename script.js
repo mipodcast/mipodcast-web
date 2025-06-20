@@ -39,12 +39,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add loading animation for video iframes
-    const videoIframes = document.querySelectorAll('.video-item iframe');
-    videoIframes.forEach(iframe => {
-        iframe.addEventListener('load', function() {
-            this.style.opacity = '1';
+    // YouTube Placeholder functionality
+    const youtubePlaceholders = document.querySelectorAll('.youtube-placeholder');
+
+    youtubePlaceholders.forEach(placeholder => {
+        placeholder.addEventListener('click', function() {
+            const videoId = this.dataset.videoId;
+            const iframe = document.createElement('iframe');
+            iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0&showinfo=0&controls=1`);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            iframe.setAttribute('allowfullscreen', '');
+
+            // Replace the placeholder with the iframe
+            this.parentNode.replaceChild(iframe, this);
         });
     });
 });
+
 
